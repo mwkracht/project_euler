@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+"""Simple wrapper script to invoke problem solutions via command line."""
+import argparse
+import sys
+import timeit
+
+import project_euler
+
+
+SUCCESS = 0
+FAILURE = 1
+
+REQ_PROBLEM_LEN = 3
+USEC_PER_SEC = 1000000
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Run a specific project euler solution.')
+    parser.add_argument('problem', help='Problem number')
+    parser.add_argument(
+        'executions', type=int, default=1, nargs='?', help='Times to execute solution for timing purposes'
+    )
+    args = parser.parse_args()
+
+    # Prefix problem number with '0' to enforce requiste problem number length
+    problem_number = '0' * (REQ_PROBLEM_LEN - len(args.problem)) + args.problem
+
+    try:
+        problem_module = getattr(project_euler, 'problem_{0}'.format(problem_number))
+        solution_method = getattr(problem_module, 'solution')
+    except AttributeError:
+        print('No solution found for Problem {0}'.format(problem_number))
+        return FAILURE
+
+    solution = solution_method()
+    total_execution_sec = timeit.timeit(solution_method, number=args.executions)
+    avg_execution_usec = (total_execution_sec * USEC_PER_SEC) / args.executions
+
+    print('Solution: {0}'.format(solution))
+    print('Avg Execution: {0} usec'.format(avg_execution_usec))
+    return SUCCESS
+
+
+if __name__ == "__main__":
+    sys.exit(main())
