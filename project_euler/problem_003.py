@@ -1,5 +1,6 @@
 """
 Project Euler - Problem 3
+Copyright (c) Matthew Kracht. All rights reserved.
 
 The prime factors of 13195 are 5, 7, 13 and 29.
 
@@ -75,7 +76,7 @@ def get_prime_factorization(number):
     finding the least prime factor of the number divided by the previously found factor and so on.
     """
     def smallest_prime_factor(n):
-        return next((i for i in range(2, math.floor(math.sqrt(n))) if n % i == 0), n)
+        return next((i for i in range(2, math.floor(math.sqrt(n)) + 1) if n % i == 0), n)
 
     primes = []
 
