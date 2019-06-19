@@ -1,5 +1,6 @@
 from project_euler import problem_001
 from project_euler import problem_002
+from project_euler import problem_003
 
 
 __version__ = '0.0.0'

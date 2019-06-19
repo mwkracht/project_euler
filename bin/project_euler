@@ -37,7 +37,7 @@ def main():
     avg_execution_usec = (total_execution_sec * USEC_PER_SEC) / args.executions
 
     print('Solution: {0}'.format(solution))
-    print('Avg Execution: {0} usec'.format(avg_execution_usec))
+    print('Avg Execution: {0:.2f} usec'.format(avg_execution_usec))
     return SUCCESS
 
 
