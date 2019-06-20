@@ -56,8 +56,7 @@ def second_solution():
     return sum(only_even_fibonacci(MAX_TERM))
 
 
-solutions = [
+SOLUTIONS = [
     first_solution,
     second_solution
 ]
-solution = solutions[-1]

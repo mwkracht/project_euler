@@ -48,7 +48,6 @@ def brute_force_solution():
     )
 
 
-solutions = [
+SOLUTIONS = [
     brute_force_solution,
 ]
-solution = solutions[-1]

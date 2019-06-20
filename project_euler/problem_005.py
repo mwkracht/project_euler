@@ -46,7 +46,6 @@ def simple_solution():
     return lcm(list(range(1, 21)))
 
 
-solutions = [
+SOLUTIONS = [
     simple_solution
 ]
-solution = solutions[-1]

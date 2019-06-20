@@ -94,9 +94,8 @@ def largest_prime_factor_fast():
     return get_prime_factorization(TEST_NUMBER)[-1]
 
 
-solutions = [
+SOLUTIONS = [
     functools.partial(largest_prime_factor, TEST_NUMBER, get_factors),
     functools.partial(largest_prime_factor, TEST_NUMBER, get_factors_faster),
     largest_prime_factor_fast
 ]
-solution = solutions[-1]

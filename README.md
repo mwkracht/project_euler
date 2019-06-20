@@ -20,4 +20,4 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-All solutions have been run on python 3.6.
+All solutions have been tested run on python 3.6. Use `tox` to run automated tests for provided solutions.

@@ -30,7 +30,6 @@ def brute_force_solution():
     return square_of_sums - sum_of_squares
 
 
-solutions = [
+SOLUTIONS = [
     brute_force_solution,
 ]
-solution = solutions[-1]

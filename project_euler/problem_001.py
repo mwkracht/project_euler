@@ -17,10 +17,15 @@ def sum_multiples(base, limit):
     Alternate slower list comprehension sum:
         sum([x for x in range(0, base, limit)])
     """
-    num_multiples = int(math.floor(float(limit) / base))
+    num_multiples = int(math.floor(float(limit - 1) / base))
     max_multiple = num_multiples * base
     return int(((max_multiple + base) / 2.0) * num_multiples)
 
 
-def solution():
+def compute_solution():
     return sum_multiples(3, 1000) + sum_multiples(5, 1000) - sum_multiples(15, 1000)
+
+
+SOLUTIONS = [
+    compute_solution,
+]

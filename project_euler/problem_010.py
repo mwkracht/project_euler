@@ -16,7 +16,6 @@ def sieve_solution():
     return sum(utils.sieve_of_eratosthenes(LIMIT))
 
 
-solutions = [
+SOLUTIONS = [
     sieve_solution,
 ]
-solution = solutions[-1]

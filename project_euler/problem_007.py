@@ -48,9 +48,8 @@ def tuned_sieve_solution():
     return sorted(list(sieve_of_eratosthenes(104744)))[NTH_PRIME_NUMBER - 1]
 
 
-solutions = [
+SOLUTIONS = [
     brute_force_solution,
     untuned_sieve_solution,  # ~ equivalent speed but calculates ~78k total primes
     tuned_sieve_solution # ~12x faster than brute_force_solution
 ]
-solution = solutions[-1]

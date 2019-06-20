@@ -27,7 +27,7 @@ def main():
 
     try:
         problem_module = getattr(project_euler, 'problem_{0}'.format(problem_number))
-        solution_method = getattr(problem_module, 'solution')
+        solution_method = getattr(problem_module, 'SOLUTIONS')[-1]
     except AttributeError:
         print('No solution found for Problem {0}'.format(problem_number))
         return FAILURE

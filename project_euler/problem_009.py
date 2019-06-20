@@ -58,8 +58,7 @@ def faster_brute_force_solution():
     return a * b * (TRIPLET_SUM - a - b)
 
 
-solutions = [
+SOLUTIONS = [
     brute_force_solution,
     faster_brute_force_solution,
 ]
-solution = solutions[-1]

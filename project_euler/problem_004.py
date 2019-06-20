@@ -29,7 +29,6 @@ def first_solution():
     )
 
 
-solutions = [
+SOLUTIONS = [
     first_solution
 ]
-solution = solutions[-1]
