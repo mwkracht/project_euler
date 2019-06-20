@@ -3,6 +3,9 @@ from project_euler import problem_002
 from project_euler import problem_003
 from project_euler import problem_004
 from project_euler import problem_005
+from project_euler import problem_006
+from project_euler import problem_007
+from project_euler import problem_008
 from project_euler import utils
 
 
