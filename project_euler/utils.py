@@ -29,3 +29,18 @@ def get_prime_factorization(number):
             break
 
     return primes
+
+
+def sieve_of_eratosthenes(limit):
+    """
+    Compute set of all prime numbers up to limit using sieve of eratosthenes.
+
+    Originally written as part of Problem 007.
+    """
+    primes = set(range(2, limit))
+
+    for i in range(2, math.floor(math.sqrt(limit))):
+        if i in primes:
+            primes -= set(range(i * 2, limit, i))
+
+    return primes
