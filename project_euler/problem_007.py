@@ -27,25 +27,14 @@ def brute_force_solution():
     return i - 1
 
 
-def sieve_of_eratosthenes(limit):
-    """Compute set of all prime numbers up to limit using sieve of eratosthenes."""
-    primes = set(range(2, limit))
-
-    for i in range(2, math.floor(math.sqrt(limit))):
-        if i in primes:
-            primes -= set(range(i * 2, limit, i))
-
-    return primes
-
-
 def untuned_sieve_solution():
     """Guessing large sieve limit in hopes that it contains the NTH_PRIME_NUMBER."""
-    return sorted(list(sieve_of_eratosthenes(1000000)))[NTH_PRIME_NUMBER - 1]
+    return sorted(list(utils.sieve_of_eratosthenes(1000000)))[NTH_PRIME_NUMBER - 1]
 
 
 def tuned_sieve_solution():
     """Using a priori knowledge of the solution to set sieve limit for highest performance."""
-    return sorted(list(sieve_of_eratosthenes(104744)))[NTH_PRIME_NUMBER - 1]
+    return sorted(list(utils.sieve_of_eratosthenes(104744)))[NTH_PRIME_NUMBER - 1]
 
 
 SOLUTIONS = [

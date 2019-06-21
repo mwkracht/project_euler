@@ -8,6 +8,8 @@ from project_euler import problem_007
 from project_euler import problem_008
 from project_euler import problem_009
 from project_euler import problem_010
+from project_euler import problem_011
+from project_euler import problem_012
 from project_euler import utils
 
 
