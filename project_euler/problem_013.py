@@ -6,7 +6,6 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 """
 
 NUM_DIGITS = 10
-WIDTH = 50
 NUMBERS = [
     37107287533902102798797998220837590246510135740250,
     46376937677490009712648124896970078050417018260538,
@@ -113,7 +112,7 @@ NUMBERS = [
 
 def compute_solution():
     """Let python handle the math for us..."""
-    return int(str(sum(NUMBERS))[:10])  # converting back to int for expected unit test type
+    return int(str(sum(NUMBERS))[:NUM_DIGITS])  # converting back to int for expected unit test type
 
 
 SOLUTIONS = [
