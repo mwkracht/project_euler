@@ -19,11 +19,11 @@ def compute_solution():
     The grid traversal can be translated into determining the unique permutations of a set
     where the set contains N number of both 'down' and 'right' items. For instance a 2x2 grid:
 
-    {r r d d} -> 16 permutations -> 6 unique permutations
+    {r r d d} -> 24 permutations -> 6 unique permutations
 
     To calculate unique permutations of a set S containing duplicates:
 
-        (all elements in S)! / (num r elements in S)! * (num d elements S)!
+        (all elements in S)! / (num a elements in S)! * (num b elements S)! ....
     """
     return int(math.factorial(GRID_SIZE * 2) / (math.factorial(GRID_SIZE) ** 2))
 
