@@ -13,6 +13,8 @@ from project_euler import problem_012
 from project_euler import problem_013
 from project_euler import problem_014
 from project_euler import problem_015
+from project_euler import problem_016
+from project_euler import problem_017
 from project_euler import utils
 
 
