@@ -24,6 +24,8 @@ import project_euler
         ('problem_015', 137846528820),
         ('problem_016', 1366),
         ('problem_017', 21124),
+        ('problem_018', 1074),
+        ('problem_067', 7273)
     ]
 )
 def test_solutions(problem, answer):
