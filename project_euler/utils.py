@@ -58,3 +58,10 @@ def sieve_of_eratosthenes(limit):
             primes -= set(range(i * 2, limit, i))
 
     return primes
+
+
+def gcd(a, b):
+    """Compute greatest common denominator (GCD) of two numbers using Euclid's algorithm."""
+    if b == 0:
+        return a
+    return gcd(b, a % b)
