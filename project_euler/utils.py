@@ -45,6 +45,17 @@ def get_factors(number):
     return lower_factors + upper_factors[::-1]
 
 
+def factor_table(limit):
+    """Return list where at each index i there is a list which contains all factors of i."""
+    table = [[] for _ in range(limit + 1)] # must initialize new list object for each table row
+
+    for i in range(1, len(table) + 1):
+        for j in range(i, len(table), i):
+            table[j].append(i)
+
+    return table
+
+
 def sieve_of_eratosthenes(limit):
     """
     Compute set of all prime numbers up to limit using sieve of eratosthenes.

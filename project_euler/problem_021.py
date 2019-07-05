@@ -32,22 +32,11 @@ def brute_force_solution():
     return sum(amicable_numbers)
 
 
-def factor_table(limit):
-    """Return list where at each index i there is a list which contains all factors of i."""
-    table = [[] for _ in range(limit + 1)] # must initialize new list object for each table row
-
-    for i in range(1, len(table) + 1):
-        for j in range(i, len(table), i):
-            table[j].append(i)
-
-    return table
-
-
 def brute_force_factor_table_solution():
     """Compute factor table which should yield a faster list of divisor sums."""
     divisor_sums = [
         sum(row[:-1])  # ignore final factor which is the number itself and not a divisor
-        for row in factor_table(LIMIT)
+        for row in utils.factor_table(LIMIT)
     ]
 
     amicable_numbers = []
