@@ -7,7 +7,7 @@ of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically o
 we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:
 
 012   021   102   120   201   210
-f
+
 What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 """
 import itertools
@@ -23,7 +23,7 @@ def brute_force_solution():
     return int(''.join(map(str, perm)))
 
 
-def fast_compute():
+def recursive_compute_solution():
     """
     The Nth item in the lexigraphic order can be found recursively starting with the MSDigit.
 
@@ -34,7 +34,7 @@ def fast_compute():
     Then start on the second digit with a set of 9 numbers etc.
     """
     def lexicographic_permutation(nums, idx):
-        """Return list of digits which represent idx-th lexicgraphic permutation of ordered nums."""
+        """Return list of digits which represent idx-th lexicgraphic permutation of ORDERED nums."""
         if idx == 0:
             return nums
 
@@ -54,5 +54,5 @@ def fast_compute():
 
 SOLUTIONS = [
     brute_force_solution,
-    fast_compute,
+    recursive_compute_solution,
 ]
