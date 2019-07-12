@@ -3,14 +3,24 @@ Module contains utility methods used to solve Project Euler problems.
 Copyright (c) Matthew Kracht. All rights reserved.
 """
 import math
+import functools
 
 
+@functools.lru_cache(maxsize=None)
 def smallest_prime_factor(n):
     return next((
         i
         for i in range(2, math.floor(math.sqrt(n)) + 1)
         if n % i == 0
     ), n)
+
+
+def is_prime(n):
+    """Return whether the provided integer N is prime."""
+    if n < 2: 
+        return False
+
+    return smallest_prime_factor(n) == n
 
 
 def get_prime_factorization(number):
