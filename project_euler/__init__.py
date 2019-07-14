@@ -29,6 +29,7 @@ from project_euler import problem_028
 from project_euler import problem_029
 from project_euler import problem_030
 from project_euler import problem_031
+from project_euler import problem_032
 from project_euler import problem_067
 from project_euler import utils
 
