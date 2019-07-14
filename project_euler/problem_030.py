@@ -48,16 +48,6 @@ def brute_force_solution():
     From this it can be seen that any number >999,999 has no chance of being a sum of its powers
     since any digit added will at least double the value but will not add more than 59049 to the
     sum.
-
-    If you replace the MSD 9 with 0, 1, or 2 in order to make the value less than the 999,999
-    sum you get:
-
-    099,999 = 295,245 + 1 = 295,246
-    199,999 = 295,245 + 1 = 295,246
-    299,999 = 295,245 + 4 = 295,249
-
-    Since there can exist six digit numbers whose sum is less than the number we assume there could
-    exist a six digit number whose sum is equal the number.
     """
     return sum([
         i
