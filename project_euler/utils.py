@@ -86,3 +86,20 @@ def gcd(a, b):
     if b == 0:
         return a
     return gcd(b, a % b)
+
+
+def reduce_fraction(numerator, denominator):
+    """Return the reduced fraction given by the numerator and denominator."""
+    numerator_factors = get_prime_factorization(numerator)
+    denominator_factors = get_prime_factorization(denominator)
+
+    for factor in numerator_factors:
+        try:
+            denominator_factors.remove(factor)
+        except ValueError:
+            pass
+        else:
+            numerator /= factor
+            denominator /= factor
+
+    return int(numerator), int(denominator)
