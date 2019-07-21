@@ -14,6 +14,20 @@ REQ_PROBLEM_LEN = 3
 USEC_PER_SEC = 1000000
 
 
+# redefining default timer template to make 'timeit' return
+#     test's execution timing and the function return value
+new_template = """
+def inner(_it, _timer{init}):
+    {setup}
+    _t0 = _timer()
+    for _i in _it:
+        ret_val = {stmt}
+    _t1 = _timer()
+    return _t1 - _t0, ret_val
+"""
+timeit.template = new_template
+
+
 def main():
     parser = argparse.ArgumentParser(description='Run a specific project euler solution.')
     parser.add_argument('problem', help='Problem number')
@@ -32,8 +46,7 @@ def main():
         print('No solution found for Problem {0}'.format(problem_number))
         return FAILURE
 
-    solution = solution_method()
-    total_execution_sec = timeit.timeit(solution_method, number=args.executions)
+    total_execution_sec, solution = timeit.timeit(solution_method, number=args.executions)
     avg_execution_usec = (total_execution_sec * USEC_PER_SEC) / args.executions
 
     print('Solution: {0}'.format(solution))

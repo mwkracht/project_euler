@@ -20,7 +20,7 @@ def is_palindrome(num, base_str='d'):
 
     # In genearl the [::-1] notation for reversing a string is faster in python than iteratively
     # checking each index or using built in methods to reverse ordering
-    return num_str[0:len(num_str) // 2] == num_str[::-1][0:len(num_str) // 2]
+    return num_str == num_str[::-1]
 
 
 def brute_force():

@@ -90,16 +90,5 @@ def gcd(a, b):
 
 def reduce_fraction(numerator, denominator):
     """Return the reduced fraction given by the numerator and denominator."""
-    numerator_factors = get_prime_factorization(numerator)
-    denominator_factors = get_prime_factorization(denominator)
-
-    for factor in numerator_factors:
-        try:
-            denominator_factors.remove(factor)
-        except ValueError:
-            pass
-        else:
-            numerator /= factor
-            denominator /= factor
-
-    return int(numerator), int(denominator)
+    _gcd = gcd(numerator, denominator)
+    return int(numerator / _gcd), int(denominator / _gcd)

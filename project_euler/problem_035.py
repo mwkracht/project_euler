@@ -12,6 +12,9 @@ How many circular primes are there below one million?
 from project_euler import utils
 
 
+LIMIT = 1000000
+
+
 def rotations(num):
     """Generator expression that produces all rotations of the provided number."""
     digits = str(num)
@@ -25,8 +28,21 @@ def brute_force_solution():
     """Iterate through every number and test if it and it's rotations are prime."""
     circular_primes = [
         i
-        for i in range(2, 1000000)
+        for i in range(2, LIMIT)
         if all(utils.is_prime(rotation) for rotation in rotations(i))
+    ]
+
+    return len(circular_primes)
+
+
+def primes_table_solution():
+    """Compute a primes table up to the LIMIT and use that to quickly check rotations."""
+    primes = utils.sieve_of_eratosthenes(LIMIT)
+
+    circular_primes = [
+        i
+        for i in range(2, LIMIT)
+        if all(rotation in primes for rotation in rotations(i))
     ]
 
     return len(circular_primes)
@@ -55,7 +71,7 @@ def brute_force_reduce_search_solution():
     """
     circular_primes_over_100 = [
         i
-        for i in circular_prime_search_space(101, 1000000)
+        for i in circular_prime_search_space(101, LIMIT)
         if all(utils.is_prime(rotation) for rotation in rotations(i))
     ]
 
@@ -64,5 +80,6 @@ def brute_force_reduce_search_solution():
 
 SOLUTIONS = [
     brute_force_solution,
-    brute_force_reduce_search_solution
+    primes_table_solution,
+    brute_force_reduce_search_solution,
 ]
