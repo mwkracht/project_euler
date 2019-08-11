@@ -45,6 +45,7 @@ import project_euler
         ('problem_036', 872187),
         ('problem_037', 748317),
         ('problem_038', 932718654),
+        ('problem_039', 840),
         ('problem_067', 7273),
     ]
 )
