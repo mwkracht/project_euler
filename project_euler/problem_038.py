@@ -17,13 +17,7 @@ pandigital, 918273645, which is the concatenated product of 9 and (1,2,3,4,5).
 What is the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated
 product of an integer with (1,2, ... , n) where n > 1?
 """
-
-def is_pandigital(number):
-    """Return True only if number is 1 to 9 pandigital."""
-    if len(str(number)) != 9:
-        return False
-
-    return set(str(number)) == {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
+from project_euler import utils
 
 
 def concatenated_products(base):
@@ -49,7 +43,7 @@ def brute_force_solution():
         product
         for i in range(1, 10000)
         for product in concatenated_products(i)
-        if is_pandigital(product)
+        if utils.is_pandigital(product)
     )
 
 

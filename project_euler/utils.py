@@ -92,3 +92,12 @@ def reduce_fraction(numerator, denominator):
     """Return the reduced fraction given by the numerator and denominator."""
     _gcd = gcd(numerator, denominator)
     return int(numerator / _gcd), int(denominator / _gcd)
+
+
+def is_pandigital(number):
+    """Return True only if number is 1 to N pandigital."""
+    width = len(str(number))
+    if width > 9:
+        return False
+
+    return set(str(number)) == set(map(str, range(1, width + 1)))
