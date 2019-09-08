@@ -16,7 +16,7 @@ How many words in WORDS are triangle words?
 """
 import itertools
 
-from project_euler import utils
+from project_euler import sequences
 
 
 WORDS = [
@@ -234,7 +234,7 @@ def brute_force_solution():
     return sum(
         1
         for word in WORDS
-        if utils.TriangularNumbers.has_term(word_value(word))
+        if sequences.TriangularNumbers.has_term(word_value(word))
     )
 
 

@@ -14,17 +14,17 @@ Find the next triangle number that is also pentagonal and hexagonal.
 """
 import itertools
 
-from project_euler import utils
+from project_euler import sequences
 
 
 def brute_force_solution():
     """Continue from H143 until the next triangular/pentagonal/hexagonal number is found."""
     return next(
-        utils.HexagonalNumbers.term(i)
+        sequences.HexagonalNumbers.term(i)
         for i in itertools.count(144)
         if (
-            utils.PentagonalNumbers.has_term(utils.HexagonalNumbers.term(i)) and
-            utils.TriangularNumbers.has_term(utils.HexagonalNumbers.term(i))
+            sequences.PentagonalNumbers.has_term(sequences.HexagonalNumbers.term(i)) and
+            sequences.TriangularNumbers.has_term(sequences.HexagonalNumbers.term(i))
         )
     )
 

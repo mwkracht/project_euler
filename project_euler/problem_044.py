@@ -15,7 +15,7 @@ pentagonal and D = |Pk − Pj| is minimised; what is the value of D?
 import itertools
 import math
 
-from project_euler import utils
+from project_euler import sequences
 
 
 def brute_force_solution():
@@ -26,22 +26,22 @@ def brute_force_solution():
     min_diff = None
 
     for k in itertools.count(2):
-        k_term = utils.PentagonalNumbers.term(k)
+        k_term = sequences.PentagonalNumbers.term(k)
 
         # If min_diff is smaller than Pk - Pk-1 then all future differences will be > min_diff
-        if min_diff and min_diff > k_term - utils.PentagonalNumbers.term(k - 1):
+        if min_diff and min_diff > k_term - sequences.PentagonalNumbers.term(k - 1):
             break
 
         for j in range(k - 1, 0, -1):
-            j_term = utils.PentagonalNumbers.term(j)
+            j_term = sequences.PentagonalNumbers.term(j)
 
             if min_diff and min_diff < k_term - j_term:
                 # all subsequent diffs will be greater k_term - j_term so no need to continue loop
                 break
 
             elif (
-                    utils.PentagonalNumbers.has_term(k_term - j_term) and 
-                    utils.PentagonalNumbers.has_term(k_term + j_term)
+                    sequences.PentagonalNumbers.has_term(k_term - j_term) and 
+                    sequences.PentagonalNumbers.has_term(k_term + j_term)
                 ):
                 min_diff = k_term - j_term
 
