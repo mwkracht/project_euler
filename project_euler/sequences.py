@@ -50,6 +50,9 @@ class HexagonalNumbers(NumberSequence):
 
 class SquareNumbers(NumberSequence):
 
+    SEQUENCE = [1]
+    TERMS = {1}
+
     @classmethod
     def term(cls, n):
         """Return the value of the Nth term of the sequence."""

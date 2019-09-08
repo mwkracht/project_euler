@@ -110,6 +110,6 @@ def reverse_search():
 
 
 SOLUTIONS = [
-    brute_force_solution,
+    # brute_force_solution,  # excluding to not slow down automated tests
     reverse_search,
 ]
