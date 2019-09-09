@@ -46,6 +46,7 @@ from project_euler import problem_045
 from project_euler import problem_046
 from project_euler import problem_047
 from project_euler import problem_048
+from project_euler import problem_049
 from project_euler import problem_067
 from project_euler import sequences
 from project_euler import utils
